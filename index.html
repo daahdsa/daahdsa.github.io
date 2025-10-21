@@ -2,13 +2,93 @@
 
 <html lang="ru">
     <head>
-        <title> Задание 1 </title>
+        <title> Задание 2 </title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     </head>
     
     <body>
-        
-        <h1> Гиперссылки </h1>
+        <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="лого.png" alt="Логотип">
+            </div>
+            <div class="site-title">
+                <h1>Сайт, у которого есть название!</h1>
+            </div>
+            <nav class="main-menu">
+                <a href="#links">Гиперссылки</a>
+                <a href="#table">Таблица</a>
+                <a href="#form">Форма</a>
+            </nav>
+        </div>
+    </header>
+<br>
+ <h1 id="table">Таблица</h1>
+    <table>
+        <tr>
+            <th>№</th>
+            <th>Виды сыров</th>
+            <th>Плесень/дырки</th>
+            <th>Общая оценка</th>
+        </tr>
+        <tbody>
+        <tr>
+            
+            <td>1</td>
+            <td>Российский</td>
+            <td>дырки</td>
+            <td>7/10</td>
+            
+        </tr>
+        <tr>
+            
+            <td>2</td>
+            <td>Камамбер</td>
+            <td>нет</td>
+            <td>7/10</td>
+            </ta>
+        </tr>
+        <tr>
+            
+            <td>3</td>
+            <td>Чеддер</td>
+            <td>дырки</td>
+            <td>8/10</td>
+            
+        </tr>
+        <tr>
+           
+            <td>4</td>
+            <td>Рокфор</td>
+            <td>плесень</td>
+            <td>3/10</td>
+            
+        </tr>
+        <tr>
+            
+            <td>5</td>
+            <td>Моцарелла</td>
+             <td>нет</td>
+            <td>9/10</td>
+            
+        </tr>
+        <tr>
+            
+            <td colspan="3">Победитель:</td>
+            <td>Моцарелла!!</td>
+            
+        </tr>
+        </tbody>
+    </table>
+
+
+
+
+<br>
+        <h1 id="links"> Гиперссылки </h1>
+        <br>
         <ul>
             <li><a href="http://kubsu.ru"> 1. Абсолютная гиперссылка на главную страницу сайта КубГУ </a></li>
             <li><a href="https://kubsu.ru"> 2. Абсолютная гиперссылка на главную страницу сайта КубГУ протоколе https </a></li>
@@ -55,8 +135,14 @@
             </li>
             <li><a href="ftp://user:password@example/file.txt">21. Ссылка на файл на сервере FTP с авторизацией </a></li>
         </ul>
+
+        <br>
+
+
+
        
-        <h1> Форма </h1>
+        <h1 id="form"> Форма </h1>
+        <br>
         
         <form action="/"
         method="POST">
@@ -99,22 +185,16 @@
                        type="date">
             </label> <br>
             
-            <br>
             
-            <label>
-                Пол:
-                <input type="radio"
-                       name="radio-group-1"
-                       value="Значение1">
-                Мужской
-            </label>
-            
-            <label>
-                <input type="radio"
-                       name="radio-group-2"
-                       value="Значение2">
-                Женский
-            </label> <br>
+           <lable><br/>
+                Пол: <br/>
+                <lable><input name="button"
+                value="значение1"
+                type="radio"> Мужской </lable>
+                <label><input name="button"
+                value="значение2"
+                type="radio"> Женский </label>
+            </lable><br/>
             
             <br>
             
@@ -157,5 +237,14 @@
             <input type="submit"
                    value="Сохранить">
         </form>
+<br>
+ <a href="#">В самое начало</a>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; Copyright © 2025 Саакян Диана. All rights reserved.</p>
+        </div>
+    </footer>
+
+
     </body>
 </html>
