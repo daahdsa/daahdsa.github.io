@@ -2,7 +2,7 @@
 
 <html lang="ru">
     <head>
-        <title> Задание 2 </title>
+        <title> Задание 3 </title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
@@ -26,9 +26,9 @@
     </header>
 <br>
 
-
-<br>
-        <h1 id="links"> Гиперссылки </h1>
+    <main class="content">
+        <selection id="links"> 
+            <h1>Гиперссылки </h1>
         <br>
         <ul>
             <li><a href="http://kubsu.ru"> 1. Абсолютная гиперссылка на главную страницу сайта КубГУ </a></li>
@@ -76,10 +76,15 @@
             </li>
             <li><a href="ftp://user:password@example/file.txt">21. Ссылка на файл на сервере FTP с авторизацией </a></li>
         </ul>
+        </selection>
 
         <br>
-        
- <h1 id="table">Таблица</h1>
+
+
+
+
+ <selection id="table">
+    <h1>Таблица</h1>
     <table>
         <tr>
             <th>№</th>
@@ -136,19 +141,21 @@
         </tr>
         </tbody>
     </table>
+</selection>
 
 
 
+<br>
 
 
 
 
        
-        <h1 id="form"> Форма </h1>
+        <selection id="form"> 
+            <h1>Форма </h1>
         <br>
         
-        <form action="/"
-        method="POST">
+        <form action="/" method="POST">
             
             <label> 
                 ФИО: <br>
@@ -228,27 +235,26 @@
             
             <br>
             
-            <label>
-                <input type="checkbox"
-                       checked="checked"
-                       name="field-name-4">
-                С контрактом ознакомлен(а)
-            </label> <br>
-            
-            <br>
-            
-            <input type="submit"
-                   value="Сохранить">
-        </form>
+<label style="display: block; margin-bottom: 10px;">
+  <input type="checkbox" name="check" required />
+  С контрактом ознакомлен(а)
+</label>
+
+<input type="submit" value="Отправить" style="padding: 8px 16px;" />
+</form>
+<a href="#">В самое начало</a>
+        </selection>
+        </main>
 <br>
- <a href="#">В самое начало</a>
+
+
+
     <footer>
         <div class="footer-container">
-            <p>&copy; Copyright © 2025 Саакян Диана. All rights reserved.</p>
+            <p> Copyright © 2025 Саакян Диана. All rights reserved.</p>
         </div>
     </footer>
 
 
     </body>
 </html>
-
