@@ -1,261 +1,50 @@
 <!DOCTYPE html>
+
 <html lang="ru">
-<head>
-    <title>Задание 3</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <head>
+        <title>Калькулятор</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+    </head>
+    <body>
+        <div class="container mt-5">
+            <div class="highlighted p-4">
+                <div class="fs-3">Калькулятор-касса</div>
+                <br/>
+                    <div>
+                    <label for="inputState" class="form-label">Выберите товар из списка:
+                    <select class="form-select mb-3" id="product">
+                        <option value="0">Яблоки (300₽ кг)</option>
+                        <option value="1">Сельдерей (300₽  кг)</option>
+                        <option value="2">Картофель (100₽ кг)</option>
+                        <option value="3">Огурцы (100₽ кг)</option>
+                        <option value="4">Лук (60₽ кг)</option>
+                    </select>
+                    </label>
+                    </div>
 
-<body>
-    <header>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-2">
-                    <div class="logo">
-                        <img src="лого.png" alt="Логотип" class="img-fluid">
+                
+                    <div class="mb-3">
+                            <label for="exampleInputNumber" class="form-label">Введите количество товара: 
+                                <br>
+                                <input class="form-control" 
+                                       id="quantity" 
+                                       aria-describedby="format"
+                                       name="field-name-001"
+                                       type="number">
+                            </label>
                     </div>
-                </div>
-                <div class="col-md-7">
-                    <div class="site-title">
-                        <h1>Сайт, у которого есть название!</h1>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <nav class="main-menu">
-                        <a href="#links">Гиперссылки</a>
-                        <a href="#table">Таблица</a>
-                        <a href="#form">Форма</a>
-                    </nav>
-                </div>
+
+
+
+                <button id="calculate" type="submit" class="btn btn-primary">Рассчитать</button>
+
+                <div id="result" class="mt-3"></div>
             </div>
         </div>
-    </header>
-
-    <main class="content">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4" id="links">
-                    <h1>Гиперссылки</h1>
-                    <br>
-                    <ul>
-                        <li><a href="http://kubsu.ru">1. Абсолютная гиперссылка на главную страницу сайта КубГУ</a></li>
-                        <li><a href="https://kubsu.ru">2. Абсолютная гиперссылка на главную страницу сайта КубГУ протоколе https</a></li>
-                        <li>3. <a href="https://flowwow.com"><img src="image.jpg" alt="Ссылка-изображение на цветочек" id="pic" width="20%"></a></li>
-                        <li><a href="/index.html">4. Сокращенная ссылка на внутреннюю страницу</a></li>
-                        <li><a href="/">5. Сокращённая ссылка на главную страницу</a></li>
-                        <li><a href="#pic">6. Ссылка на фрагмент текущей страницы</a></li>
-                        <li><a href="/index?size=m?color=red?page=1">7. Ссылка с тремя параметрами в URL</a></li>
-                        <li><a href="/index?id=id">8. Ссылка с параметром id в URL</a></li>
-                        <li><a href="./index.html">9. Относительная ссылка на страницу в текущем каталоге</a></li>
-                        <li><a href="/about/index.html">10. Относительная ссылка на страницу в каталоге about</a></li>
-                        <li><a href="../index.html">11. Относительная ссылка на страницу в каталоге уровнем выше текущего</a></li>
-                        <li><a href="../../index.html">12. Относительная ссылка на страницу в каталоге двумя уровнями выше</a></li>
-                        <li>13. Контекстная <a href="#pic">ссылка</a> в тексте абзаца</li>
-                        <li><a href="https://707.su/DoBk">14. Ссылка на фрагмент страницы стороннего сайта</a></li>
-                        <li>
-                            <p>15. Ссылки из прямоугольных и круглых областей картинки:</p>
-                            <map name="map">
-                                <area shape="rectangle" 
-                                      coords="0,0,200,50" 
-                                      href="https://flowwow.com/nizhniy-novgorod/gifts-for-children/?min_discount=15" 
-                                      alt="подарки детям flowwow">
-                                <area shape="circle" 
-                                      coords="100,100,100" 
-                                      href="https://flowry.ru/topics/spravochnik-tsvetov/?ysclid=mg5l0isv6m313602118" 
-                                      alt="справочник цветов">
-                            </map>
-                            <img src="image.jpg" 
-                                 alt="картинка с разными областями" 
-                                 usemap="#map"
-                                 width="200" 
-                                 height="200">
-                        </li>
-                        <li><a href="">16. Ссылка с пустым href</a></li>
-                        <li><a>17. Ссылка без href</a></li>
-                        <li><a href="/no-follow" rel="nofollow">18. Ссылка, по которой запрещен переход поисковикам</a></li>
-                        <li><a href="/no-index" rel="noindex">19. Запрещенная ссылка для индексации поисковиками</a></li>
-                        <li>20. Нумерованный список ссылок с подписями title:
-                            <ol>
-                                <li><a href="/link1">Ссылка 1</a></li>
-                                <li><a href="/link2">Ссылка 2</a></li>
-                                <li><a href="/link3">Ссылка 3</a></li>
-                            </ol>
-                        </li>
-                        <li><a href="ftp://user:password@example/file.txt">21. Ссылка на файл на сервере FTP с авторизацией</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-6 col-md-12">
-                    <div class="row">
-                        <div class="col-12 mb-4" id="table">
-                            <h1>Таблица</h1>
-                            <table>
-                                <tr>
-                                    <th>№</th>
-                                    <th>Виды сыров</th>
-                                    <th>Плесень/дырки</th>
-                                    <th>Общая оценка</th>
-                                </tr>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Российский</td>
-                                        <td>дырки</td>
-                                        <td>7/10</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Камамбер</td>
-                                        <td>нет</td>
-                                        <td>7/10</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Чеддер</td>
-                                        <td>дырки</td>
-                                        <td>8/10</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Рокфор</td>
-                                        <td>плесень</td>
-                                        <td>3/10</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Моцарелла</td>
-                                        <td>нет</td>
-                                        <td>9/10</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3">Победитель:</td>
-                                        <td>Моцарелла!!</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div class="col-12" id="form">
-                            <h1>Форма</h1>
-                            <br>
-                            <form action="/" method="POST">
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        ФИО: <br>
-                                        <input name="username"
-                                               placeholder="Иванов Иван Иванович"
-                                               class="form-control">
-                                    </label>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        Номер телефона: <br>
-                                        <input type="tel" 
-                                               name="tel" 
-                                               class="form-control"
-                                               id="tel" 
-                                               placeholder="+7(XXX)-XXX-XX-XX" 
-                                               pattern="[0-9]{11}" 
-                                               minlength="11" 
-                                               maxlength="11" 
-                                               oninput="this.value=this.value.replace(/\D/g,'').substring(0,11)" 
-                                               required>
-                                    </label>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        Email (электронная почта): <br>
-                                        <input name="field-email"
-                                               type="email"
-                                               class="form-control"
-                                               placeholder="name@example.com">
-                                    </label>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        Дата рождения: <br>
-                                        <input name="field-date"
-                                               class="form-control"
-                                               value="2025-01-01"
-                                               pattern="[0-9]{2}\.[0-9]{2}\.[0-9]{4}"
-                                               oninput="this.value=this.value.replace(/\D/g,'').substring(0,10)"
-                                               type="date">
-                                    </label>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        Пол: <br>
-                                        <label><input name="button" value="значение1" type="radio"> Мужской</label>
-                                        <label><input name="button" value="значение2" type="radio"> Женский</label>
-                                    </label>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        Любимый язык программирования: <br>
-                                        <select name="field-name-2"
-                                                multiple="multiple"
-                                                class="form-select">
-                                            <option value="Значение1" selected>Python</option>
-                                            <option value="Значение2">C#</option>
-                                            <option value="Значение3">C++</option>
-                                            <option value="Значение4">SQL</option>
-                                            <option value="Значение5">Javascript</option>
-                                            <option value="Значение6">Python</option>
-                                            <option value="Значение7">Java</option>
-                                            <option value="Значение8">Kotlin</option>
-                                            <option value="Значение9">Swift</option>
-                                            <option value="Значение10">Objective-C</option>
-                                            <option value="Значение11">Ruby</option>
-                                        </select>
-                                    </label>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        Биография <br>
-                                        <textarea name="field-name-3" placeholder="Напишите о себе" class="form-control"></textarea>
-                                    </label>
-                                </div>
-
-                                <div class="mb-3">
-                                    <div class="form-check">
-                                        <label style="display: block; margin-bottom: 10px;">
-                                            <input type="checkbox" name="check" required>
-                                            С контрактом ознакомлен(а)
-                                        </label>
-                                        <input type="submit" value="Отправить" class="btn btn-primary" style="padding: 8px 16px;">
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-<br>
-        <div class="text-center mb-4">
-            <a href="#" class="btn btn-secondary">В самое начало ↑</a>
-        </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <p>Copyright © 2025 Саакян Диана. All rights reserved.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>
