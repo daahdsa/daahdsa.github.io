@@ -2,48 +2,53 @@
 
 <html lang="ru">
     <head>
-        <title>Калькулятор</title>
+        <title>Задание 6 </title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css" type="text/css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> 
+        <link rel="stylesheet" href="style.css" type="text/css">
     </head>
     <body>
-        <div class="container mt-5">
-            <div class="highlighted p-4">
-                <div class="fs-3">Калькулятор-касса</div>
-                <br/>
-                    <div>
-                    <label for="inputState" class="form-label">Выберите товар из списка:
-                    <select class="form-select mb-3" id="product">
-                        <option value="0">Яблоки (300₽ кг)</option>
-                        <option value="1">Сельдерей (300₽  кг)</option>
-                        <option value="2">Картофель (100₽ кг)</option>
-                        <option value="3">Огурцы (100₽ кг)</option>
-                        <option value="4">Лук (60₽ кг)</option>
-                    </select>
+        <header class="container-main text-center">
+            <div class="fs-3 pt-1">СПА-салон "Blissway"</div>
+            <div id="calc" class="fs-7">Рассчитайте стоимость ваших выбранных услуг</div>
+        </header>
+        <div class="container">
+            <div class="fs-4">Калькулятор услуг</div>
+            <div id="prodPrice">Выберите услугу:</div>
+            <form>
+                <div id="prodTypes" class="m-1">
+                    <label class="form-check-label" for="radio1">
+                        <input class="form-check-input" type="radio" name="r" value="1"> Солярийㅤ</label>
+                    <label class="form-check-label" for="radio2">
+                        <input class="form-check-input" type="radio" name="r" value="2"> Массажㅤ
                     </label>
-                    </div>
-
-                
-                    <div class="mb-3">
-                            <label for="exampleInputNumber" class="form-label">Введите количество товара: 
-                                <br>
-                                <input class="form-control" 
-                                       id="quantity" 
-                                       aria-describedby="format"
-                                       name="field-name-001"
-                                       type="number">
-                            </label>
-                    </div>
-
-
-
-                <button id="calculate" type="submit" class="btn btn-primary">Рассчитать</button>
-
-                <div id="result" class="mt-3"></div>
+                    <label class="form-check-label" for="radio3">
+                        <input class="form-check-input" type="radio" name="r" value="3"> Пилингㅤ
+                    </label>
+                </div>
+                <label class="m-1">
+                    <select name="lists" id="prodOptions" class="form-select">
+                        <option value="1"> Тайский</option>
+                        <option value="2"> Глубоко питательный</option>
+                        <option value="3"> Лимфодренажный</option>
+                    </select>
+                </label>
+            <div>
+                    <label class="form-label mt-2">Введите количество человек: 
+                        <input class="form-control m-1" aria-describedby="format" name="input1" type="number" id="number1">
+                    </label>
             </div>
+
+                <div id="checkboxes" class="m-1 mt-0">
+                    <label><input type="checkbox" class="form-check-input" name="prop1"> Фруктовый</label>
+                    <label><input type="checkbox" class="form-check-input" name="prop2"> Кислотный</label>
+                </div>
+            </form>
+            <div class="container-fluid mt-3 p-2">
+                <div class="fs-5">Общая стоимость</div>
+                <div class="fs-6" id="result"></div>
+            </div>
+            <br/>
         </div>
         <script src="script.js"></script>
     </body>

@@ -1,48 +1,106 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const q = document.getElementById('quantity');
-    const p = document.getElementById('product');
-    const b = document.getElementById('calculate');
-    const r = document.getElementById('result');
-    
-    const prices = {
-        '0': 300,
-        '1': 300,
-        '2': 100,   
-        '3': 100,   
-        '4': 60    
-    };
-    
-    b.addEventListener('click', () => {
-        
-        const q1 = parseInt(q.value);
-        const p1 = p.value;
-        
-        const price = prices[p1];
-        const r1 = q1 * price;
-        
-        showResult(q1, p1, r1);
-    });
-    
-    function showResult(q1, p1, r1) {
-        const n = p.options[p1].text.split(' ')[0];
-        if (q1 >= 0)
-        {
-            r.innerHTML = `
-                <div class="alert alert-success">
-                    <strong>Результат расчета:</strong><br>
-                    Товар: ${n}<br>
-                    Количество: ${q1} шт.<br>
-                    Общая стоимость: ${r1.toLocaleString()} ₽
-                </div>
-            `;
-         }
-         else
-         {
-            r.innerHTML = `
-                <div class="alert alert-danger">
-                Расчёт невозможен. Введите натуральное число
-                </div>
-            `;
-         }
+/* global q */
+
+function getPrices() {
+  return {
+    prodTypes: [4000, 10000, 5000],
+    prodOptions: {
+      option1: 1200,
+      option2: 2500,
+      option3: 3000
+    },
+    prodProperties: {
+      prop1: 1500,
+      prop2: 2000
     }
+  };
+}
+
+function updatePrice() {
+  const radios = document.querySelectorAll('input[name="r"]');
+  let selectedValue = null;
+
+  for (const radio of radios) {
+    if (radio.checked) {
+      selectedValue = radio.value;
+      break;
+    }
+  }
+
+  let price = 0;
+  const prices = getPrices();
+
+  if (selectedValue) {
+    const priceIndex = parseInt(selectedValue) - 1;
+    if (priceIndex >= 0 && priceIndex < prices.prodTypes.length) {
+      price = prices.prodTypes[priceIndex];
+    }
+  }
+  
+  const q = document.getElementById('number1');
+  let q1 = 1;
+  
+  if (q && q.value)
+  {
+      const pq = parseInt(q.value);
+      if (!isNaN(pq) && pq > 0)
+          q1 = pq;
+  }
+
+  const selectElement = document.getElementById('prodOptions'); 
+  const checkboxesDiv = document.getElementById('checkboxes'); 
+
+  if (selectedValue === '1') {
+    selectElement.style.display = 'none';
+    checkboxesDiv.style.display = 'none';
+  } else if (selectedValue === '2') {
+    selectElement.style.display = 'block';
+    checkboxesDiv.style.display = 'none';
+  } else if (selectedValue === '3') {
+    selectElement.style.display = 'none';
+    checkboxesDiv.style.display = 'block';
+  } else {
+    selectElement.style.display = 'none';
+    checkboxesDiv.style.display = 'none';
+  }
+
+  if (selectedValue === '2' && selectElement.value) {
+    const optionKey = `option${selectElement.value}`;
+    if (prices.prodOptions[optionKey] !== undefined) {
+      price += prices.prodOptions[optionKey];
+    }
+  }
+
+  if (selectedValue === '3') {
+    const props = document.querySelectorAll('#checkboxes input[type="checkbox"]');
+    for (const prop of props) {
+      if (prop.checked) {
+        const propKey = prop.name;
+        if (prices.prodProperties[propKey] !== undefined) {
+          price += prices.prodProperties[propKey];
+        }
+      }
+    }
+  }
+  
+  price *= q1;
+
+  const prodPrice = document.getElementById('prodPrice');
+  const result = document.getElementById('result');
+  if (prodPrice) {
+    result.textContent = `${price} рублей`;
+  }
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  const radios = document.querySelectorAll('input[name="r"]');
+  const selectElement = document.getElementById('prodOptions');
+  const checkboxes = document.querySelectorAll('#checkboxes input[type="checkbox"]');
+  const q = document.getElementById('number1');
+
+  radios.forEach(radio => radio.addEventListener('change', updatePrice));
+  selectElement.addEventListener('change', updatePrice);
+  checkboxes.forEach(checkbox => checkbox.addEventListener('change', updatePrice));
+  q.addEventListener('input', updatePrice);
+
+  updatePrice();
 });
