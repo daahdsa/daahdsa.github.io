@@ -1,29 +1,43 @@
-.container-main{
-    background-color: ivory;
-    height: auto;
-    border-radius: 8px;
-    border: rgb(255, 232, 157);
+header{
+    background-color: #ff7b00;
+    font-size: 5px;
+
 }
-#calc{
-    font-style: italic;
+
+body {
+  background-color: #04006c;
 }
-.container{
-    width: 70%;
-    margin: 0 auto;
-    padding: 10px;
-    background-color: rgb(255, 240, 182);
-    border-radius: 8px;
-    margin-top: 4rem;
+a{
+   font-size: 20px;
+   color: #ff8800;
+   text-decoration: none;
 }
-#checkboxes {
-    display: none;
+.gallery-container {
+  padding: 1rem;
+  max-width: 95%;
+  margin: 0 auto;
 }
-#prodOptions {
-    display: none;
+.multiple-items {
+  margin: 0 auto;
 }
-.container-fluid{
-    background-color: ivory;
-    width: 500px;
-    border-radius: 8px;
-    margin-left: 0;
+
+.slide {
+  flex: 0 0 100%;
+  padding: 5px;
+}
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+.slick-prev:before, 
+.slick-next:before {
+    color: #ff8800;
+    font-size: 25px;
+}
+@media (min-width: 720px) {
+    .gallery-container {
+        max-width: 80%;
+    }
 }

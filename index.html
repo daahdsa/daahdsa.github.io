@@ -1,55 +1,49 @@
 <!DOCTYPE html>
-
-<html lang="ru">
+<html>
     <head>
-        <title>Задание 6 </title>
+        <title>Задание 7</title>
         <meta charset="UTF-8">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> 
-        <link rel="stylesheet" href="style.css" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <header class="container-main text-center">
-            <div class="fs-3 pt-1">СПА-салон "Blissway"</div>
-            <div id="calc" class="fs-7">Рассчитайте стоимость ваших выбранных услуг</div>
+        <header>
+            <h5 class="p-4 text-center">Виды графического дизайна 2025</h5>
         </header>
-        <div class="container">
-            <div class="fs-4">Калькулятор услуг</div>
-            <div id="prodPrice">Выберите услугу:</div>
-            <form>
-                <div id="prodTypes" class="m-1">
-                    <label class="form-check-label" for="radio1">
-                        <input class="form-check-input" type="radio" name="r" value="1"> Солярийㅤ</label>
-                    <label class="form-check-label" for="radio2">
-                        <input class="form-check-input" type="radio" name="r" value="2"> Массажㅤ
-                    </label>
-                    <label class="form-check-label" for="radio3">
-                        <input class="form-check-input" type="radio" name="r" value="3"> Пилингㅤ
-                    </label>
+        <div class="gallery-container mt-5 p-5">
+            <div class="multiple-items">
+                <div class="slide">
+                    <img src="визуальная айдентика бренда.png" alt="визуальная айдентика бренда">
+                    <a href="https://studyonline.hse.ru/blog/statyi/design/ajdentika-brenda?ysclid=mixnrfhis6105546842">Визуальная айдентика бренда</a>
                 </div>
-                <label class="m-1">
-                    <select name="lists" id="prodOptions" class="form-select">
-                        <option value="1"> Тайский</option>
-                        <option value="2"> Глубоко питательный</option>
-                        <option value="3"> Лимфодренажный</option>
-                    </select>
-                </label>
-            <div>
-                    <label class="form-label mt-2">Введите количество человек: 
-                        <input class="form-control m-1" aria-describedby="format" name="input1" type="number" id="number1">
-                    </label>
-            </div>
-
-                <div id="checkboxes" class="m-1 mt-0">
-                    <label><input type="checkbox" class="form-check-input" name="prop1"> Фруктовый</label>
-                    <label><input type="checkbox" class="form-check-input" name="prop2"> Кислотный</label>
+                <div class="slide"><img src="внешняя среда.png" alt="внешняя среда">
+                    <a href="https://rudesignshop.ru/blog/dizayn-vneshney-sredy/">Дизайн внешней среды</a>
                 </div>
-            </form>
-            <div class="container-fluid mt-3 p-2">
-                <div class="fs-5">Общая стоимость</div>
-                <div class="fs-6" id="result"></div>
+                <div class="slide"><img src="дизайн упаковки.png" alt="дизайн упаковки">
+                    <a href="https://otvetdesign.ru/blog/dizajn-upakovki?ysclid=mixnugdvjv74319058">Дизайн упаковки</a>
+                </div>
+                <div class="slide"><img src="продвиджение в интернете.png" alt="продв инет">
+                    <a href="https://otvetdesign.ru/blog/dizajn-upakovki?ysclid=mixnugdvjv74319058">Продвижение в интернете</a>
+                </div>
+                <div class="slide"><img src="реклама.png" alt="реклама">
+                    <a href="https://direct.yandex.ru/base/articles/prodvizhenie-reklama-v-internete?utm_source=ya_search&utm_medium=cpc&utm_campaign=RU_SEA_Ydirect_DYN_EPK_Hub_Autotarget_desktop_03_02&utm_content=search|ph|54173728204|ret|54173728204|cid|117673750|gid|5535243924|aid|1866797787778245627|adp|no|pos|premium1|src|search_none|dvc|desktop|cr|0|ad|0&etext=2202.fveKU0lvxHFGRCLJXAWWWC98ZxLDJ7E89m7gv8b2PztqZHBta3FrbmxxYWVrY3ls.cb6977b62694429d2c58f587603a00f0d453cefd&yclid=4046162479051702271&ybaip=1">Рекламная графика</a>
+                </div>
+                <div class="slide"><img src="типографика.png" alt="типографика">
+                    <a href="https://skillbox.ru/media/design/chto_takoe_tipografika/?ysclid=mixo3huyci463518160">Дизайн публикаций и типографика</a>
+                </div>
+                <div class="slide"><img src="юай дизайн.png" alt="юай">
+                    <a href="https://trends.rbc.ru/trends/education/66f670a49a7947141e9d7cfd">UI дизайн</a>
+                </div>
+                 <div class="slide"><img src="иллюстрация.png" alt="иллюстрации">
+                    <a href="https://practicum.yandex.ru/blog/chto-takoe-illyustraciya/?ysclid=mixo8qhbtj974730661">Иллюстрация</a>
+                </div>
             </div>
-            <br/>
-        </div>
+        </div> 
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <script src="script.js"></script>
     </body>
 </html>
